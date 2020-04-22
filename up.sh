@@ -2,8 +2,6 @@
 
 set -eo pipefail
 
-source ./common.sh 
-
 #./08_prom_grafana_thanos.sh -d true
 while getopts d: option; do
   case "${option}" in 
@@ -11,7 +9,7 @@ while getopts d: option; do
       echo "-d delete was triggered, Parameter: ${OPTARG}";
       helm delete grafana;
       helm delete prometheus;
-      kubectl delete -f config_all.yaml
+      kubectl delete -f yace/
       exit 1
       ;;
     \?)
@@ -41,7 +39,7 @@ helm upgrade -i grafana ./grafana \
     --set service.type=LoadBalancer
 
 
-kubectl apply -f config_all.yaml
+kubectl apply -f yace/
 
 # kubectl get pods --namespace monitoring -l "app=prometheus,component=alertmanager" -o jsonpath="{.items[0].metadata.name}")
 #   kubectl --namespace monitoring port-forward $POD_NAME 9093
