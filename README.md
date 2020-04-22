@@ -50,3 +50,7 @@ One of the questions we often get when we talk about Promcat is “How does Prom
     6. Allows exports metrics with CloudWatch timestamps (disabled by default)
 
 
+### Example of ELB monitoring dashboard
+
+
+<p align="center"><img src="images/elb_snapshot.png"></p>
