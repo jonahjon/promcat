@@ -98,7 +98,7 @@ data:
   config.yml: |
     discovery:
       jobs:
-      - region: us-east-1
+      - region: us-west-2
         type: s3
         metrics:
           - name: NumberOfObjects
@@ -127,7 +127,7 @@ data:
   config.yml: |
     discovery:
       jobs:
-      - region: us-east-1
+      - region: us-west-2
         type: s3
         awsDimensions:
           - FilterId
